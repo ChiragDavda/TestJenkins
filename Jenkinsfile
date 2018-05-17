@@ -9,7 +9,8 @@ stages {
     stage('Stage-One') {
         steps {
             script {                
-                env.BRANCHDEPLOY = input message: 'User input required',
+                sh "echo ${GIT_BRANCH##origin}"
+		env.BRANCHDEPLOY = input message: 'User input required',
                 ok: 'Deploy!',
                 parameters: [choice(name: 'Branch to deploy', choices: "${branch1}", description: 'What branch you wont deploy?')]
             }
@@ -17,7 +18,7 @@ stages {
     }
     stage('Stage-Two'){
         steps{
-            sh "echo ${BRANCHDEPLOY}"
+	    sh "echo ${BRANCHDEPLOY}"
         }
     }
 }
