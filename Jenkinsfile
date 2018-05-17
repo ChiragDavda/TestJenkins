@@ -2,7 +2,7 @@ pipeline {
 agent any
 
 environment{
-    branch1 = 'master'
+    branch1 = ${GIT_BRANCH##origin/}
 }
 
 stages {
