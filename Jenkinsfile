@@ -23,7 +23,9 @@ pipeline {
             }
         }
 	stage('Deploy'){
-		sh "echo ${BRANCHDEPLOY}"
+		steps{
+			sh "echo ${BRANCHDEPLOY}"
+		}
 	}
 
     }
