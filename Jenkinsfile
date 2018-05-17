@@ -14,7 +14,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying'
-		sh './app.py'
+		sh 'app.py'
             }
         }
     }
